@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      suivi
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="full">
+    <ion-label position="floating">Numerero Dépot : </ion-label>
+    <ion-input type="text"  [(ngModel)]="numero" required onfocus="list()"></ion-input> 
+  </ion-item>
+  <ion-grid class="ion-no-padding">
+    <ion-row *ngFor="let item of this.service.list; trackBy : trackByFn">
+      <ion-col>
+        <ion-card>
+          <ion-card-content class="ion-no-padding">
+            <ion-row>
+             
+            
+              <ion-col class="ion-padding">
+                <ion-row>
+                  <ion-col>
+                    <span class="font-14 text-bold">date de depot: {{item.dateDepot}} </span>
+                  </ion-col>
+                  </ion-row>
+                  <ion-row>
+
+                  <ion-col>
+                    <span class="font-14 text-bold"> le destinateur :{{item.destinataire}} </span>
+                  </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+                      <span class="font-14 text-bold"> Telephone :{{item.tel}} </span>
+                    </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      
+                  <ion-col>
+                    <span class="font-14 text-bold"> l'etat :{{item.etat}} </span>
+                  </ion-col>
+                </ion-row>
+                
+                
+                
+                <ion-row>
+                  <ion-col>
+                    <ion-button color="success">
+                      consulter etat
+                    </ion-button>
+                  </ion-col>
+                 
+                </ion-row>
+
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
